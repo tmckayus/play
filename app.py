@@ -7,9 +7,7 @@ conf.setAppName('spark-basic')
 sc = SparkContext(conf=conf)
 
 def mod(x):
-#    import numpy as np
-#    return (x, np.mod(x, 2))
     return (x, x % 2)
 
-rdd = sc.parallelize(range(1000)).map(mod).take(10)
+rdd = sc.parallelize(range(1000)).map(mod).take(30)
 print rdd
