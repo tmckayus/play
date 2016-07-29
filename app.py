@@ -9,5 +9,6 @@ sc = SparkContext(conf=conf)
 def mod(x):
     return (x, x % 2)
 
+print "this is me!"
 rdd = sc.parallelize(range(1000)).map(mod).take(30)
 print rdd
