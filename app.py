@@ -1,5 +1,6 @@
 # spark-basic.py
 import sys
+import time
 from pyspark import SparkConf
 from pyspark import SparkContext
 
@@ -14,3 +15,5 @@ print "this is me!"
 print('\n'.join(sys.path))
 rdd = sc.parallelize(range(1000)).map(mod).take(30)
 print rdd
+print("sleeping for 10 minutes")
+time.sleep(600)
