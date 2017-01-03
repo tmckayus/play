@@ -14,3 +14,4 @@ def mod(x):
 print('\n'.join(sys.path))
 rdd = sc.parallelize(range(1000)).map(mod).take(30)
 print rdd
+time.sleep(15)
