@@ -1,6 +1,8 @@
 # spark-basic.py
 import sys
 import time
+import numpy
+
 from pyspark import SparkConf
 from pyspark import SparkContext
 
@@ -9,7 +11,7 @@ conf.setAppName('spark-basic')
 sc = SparkContext(conf=conf)
 
 def mod(x):
-    return (x, x % 2)
+    return (x, numpy.mod(x, 2))
 
 print('\n'.join(sys.path))
 rdd = sc.parallelize(range(1000)).map(mod).take(30)
