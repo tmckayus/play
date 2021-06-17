@@ -16,4 +16,5 @@ def mod(x):
 print('\n'.join(sys.path))
 rdd = sc.parallelize(range(1000000)).map(mod).take(30)
 print rdd
+# comment on sleep
 time.sleep(60)
